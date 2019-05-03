@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src -c .eslintrc.json --ext js",
-    "deploy:staging": "yarn build && surge build/ --domain barcode-reactor.surge.sh"
+    "deploy:staging": "yarn build && surge build/ --domain barcode-reactor.surge.sh",
+    "now-build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"

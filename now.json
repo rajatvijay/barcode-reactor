@@ -1,10 +1,6 @@
 {
-  "alias": ["barcode-reactor.now.sh"],
-  "github": {
-    "autoAlias": false
-  },
   "version": 2,
-  "name": "my-react-app",
+  "name": "barcode-reactor",
   "builds": [
     {
       "src": "package.json",

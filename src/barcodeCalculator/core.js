@@ -41,4 +41,19 @@ export const calculateChecksum = numbers => {
   return result;
 };
 
+export const getHeightAndWidthRatiosForBarcodeStrips = () => {
+  return [
+    { height: 1, width: 1 }, // 0
+    { height: 2, width: 1 }, // 1
+    { height: 3, width: 1 }, // 2
+    { height: 4, width: 1 }, // 3
+    { height: 1, width: 2 }, // 4
+    { height: 2, width: 2 }, // 5
+    { height: 3, width: 2 }, // 6
+    { height: 4, width: 2 }, // 7
+    { height: 1, width: 3 }, // 8
+    { height: 2, width: 3 } // 9
+  ];
+};
+
 export default calculateChecksum;

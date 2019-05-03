@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "emotion": "^10.0.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-emotion": "^10.0.0",
+    "react-scripts": "3.0.0",
+    "remove": "^0.1.5"
   },
   "scripts": {
     "start": "react-scripts start",

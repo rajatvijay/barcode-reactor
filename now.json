@@ -1,0 +1,6 @@
+{
+  "alias": ["barcode-reactor.now.sh"],
+  "github": {
+    "autoAlias": false
+  }
+}

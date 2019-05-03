@@ -1,15 +1,15 @@
 import React from "react";
 import { css } from "emotion";
-import { getHeigtAndWeightForAStrip } from "../barcodeCalculator";
+import { getHeigtAndWidthForAStrip } from "../barcodeCalculator";
 import { AppContext } from "../common";
 import { isMobile } from "../common/utils";
 
-const getCSSString = noOnStrip => {
+const getHeightAndWidthCSSString = noOnStrip => {
   const screenSize = isMobile() ? "small" : "large";
-  const { height, width } = getHeigtAndWeightForAStrip(noOnStrip, screenSize);
+  const { height, width } = getHeigtAndWidthForAStrip(noOnStrip, screenSize);
   return `
-  height: ${height}px;
-  width: ${width}px;
+    height: ${height}px;
+    width: ${width}px;
   `;
 };
 
@@ -31,7 +31,7 @@ const BarcodeStrip = ({ type = "primary", num }) => {
               justify-content: center;
               align-items: center;
               color: ${colors.primaryColor};
-              ${getCSSString(num)}
+              ${getHeightAndWidthCSSString(num)}
             `}
           >
             {num}
@@ -50,7 +50,7 @@ const BarcodeStrip = ({ type = "primary", num }) => {
             justify-content: center;
             align-items: center;
             color: ${colors.secondaryColor};
-            ${getCSSString(num)}
+            ${getHeightAndWidthCSSString(num)}
             margin-right: 2px;
           `}
         >

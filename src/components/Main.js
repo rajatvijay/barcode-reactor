@@ -2,16 +2,19 @@ import React from "react";
 import { css } from "emotion";
 import { calculateChecksum } from "../barcodeCalculator";
 import BarcodeDisplayer from "./BarcodeDisplayer";
-import { AppContext, Input } from "../common";
+import {
+  AppContext,
+  Input,
+  saveItem,
+  getItem,
+  DEFAULT_COLORS
+} from "../common";
 import Header from "./Header";
 
 class Main extends React.Component {
   state = {
     barcodeNumber: "",
-    colors: {
-      primaryColor: "#000",
-      secondaryColor: "#fff"
-    },
+    colors: getItem("colors") || DEFAULT_COLORS,
     checksum: null,
     formattedBarcodeNumbers: []
   };
@@ -24,7 +27,13 @@ class Main extends React.Component {
 
   updateColor = key => e => {
     const { value } = e.target;
-    this.setState(state => ({ colors: { ...state.colors, [key]: value } }));
+    this.setState(
+      state => ({ colors: { ...state.colors, [key]: value } }),
+      () => {
+        const { colors } = this.state;
+        saveItem("colors", colors);
+      }
+    );
   };
 
   updateBarcodeNumbers = e => {
@@ -73,16 +82,31 @@ class Main extends React.Component {
                   max-width: 400px;
                 `}
               />
-              {/* <input
-              placeholder="Primary Color"
-              onChange={this.updateColor("primaryColor")}
-              value={colors.primaryColor}
-            />
-            <input
-              placeholder="Secondary Color"
-              onChange={this.updateColor("secondaryColor")}
-              value={colors.secondaryColor}
-            /> */}
+              <div
+                className={css`
+                  display: flex;
+                  justify-content: center;
+                  margin-top: 10px;
+
+                  input {
+                    width: 45px;
+                    height: 45px;
+                  }
+                `}
+              >
+                <input
+                  type="color"
+                  placeholder="Primary Color"
+                  onChange={this.updateColor("primaryColor")}
+                  value={colors.primaryColor}
+                />
+                <input
+                  type="color"
+                  placeholder="Secondary Color"
+                  onChange={this.updateColor("secondaryColor")}
+                  value={colors.secondaryColor}
+                />
+              </div>
               <div
                 className={css`
                   margin-top: 40px;

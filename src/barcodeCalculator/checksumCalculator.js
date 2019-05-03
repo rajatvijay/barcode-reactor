@@ -22,7 +22,7 @@ const getOddAndEvenPositionedItemSum = array => {
 };
 
 /**
- *
+ * Calculates the checksum from the given numbers array
  * @param {Array} numbers Numbers array to calculate checksum for
  * @returns {Number} checksum
  */

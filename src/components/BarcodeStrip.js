@@ -4,6 +4,13 @@ import { getHeigtAndWidthForAStrip } from "../barcodeCalculator";
 import { AppContext } from "../common";
 import { isMobile } from "../common/utils";
 
+/**
+ * Creates the CSS string with height and width property
+ * for the strip corresponding to the integer
+ * NOTE: This function is private to this component,
+ * is not meant for reuse
+ * @param {Number} noOnStrip Integer corresponding to the strip
+ */
 const getHeightAndWidthCSSString = noOnStrip => {
   const screenSize = isMobile() ? "small" : "large";
   const { height, width } = getHeigtAndWidthForAStrip(noOnStrip, screenSize);

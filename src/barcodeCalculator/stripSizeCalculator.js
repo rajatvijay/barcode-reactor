@@ -1,5 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 
+/**
+ * Calculates the ratio of height and width of barcode strip
+ * for all the integers
+ * @return {Array<{height: Number, width: Number}>}
+ */
 const getHeightAndWidthRatios = () => {
   return [
     { height: 1, width: 1 }, // 0
@@ -15,6 +20,11 @@ const getHeightAndWidthRatios = () => {
   ];
 };
 
+/**
+ * Calculates the height and width MF for diff screen sizes
+ * @param {String} size Screen/Display size
+ * @returns {Object {height: Number, width: Number}}
+ */
 const getHeightAndWidthMultiplicationFactor = size => {
   if (size === "small") {
     return {
@@ -28,6 +38,11 @@ const getHeightAndWidthMultiplicationFactor = size => {
   };
 };
 
+/**
+ * Calculates the exact height and width of the strip in pixels
+ * @param {Number} noOnStrip Integer corresponding to the strip
+ * @param {String} size Screen/Display size
+ */
 export const getHeigtAndWidthForAStrip = (noOnStrip, size) => {
   const {
     height: heightMultiplicationFactor,

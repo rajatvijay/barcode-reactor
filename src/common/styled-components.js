@@ -2,6 +2,9 @@
 
 import styled from "@emotion/styled";
 
+/**
+ * Styled input component
+ */
 export const Input = styled.input`
   border: 1px solid #eee;
   border-radius: 4px;

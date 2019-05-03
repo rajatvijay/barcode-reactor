@@ -17,7 +17,7 @@ const Header = () => {
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
       `}
     >
-      <span>Bluecode Barcode Reactor</span>
+      <span>Barcode Reactor</span>
     </div>
   );
 };

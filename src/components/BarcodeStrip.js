@@ -1,10 +1,17 @@
 import React from "react";
 import { css } from "emotion";
-import { getHeightAndWidthRatiosForBarcodeStrips } from "../barcodeCalculator";
+import { getHeigtAndWeightForAStrip } from "../barcodeCalculator";
 import { AppContext } from "../common";
+import { isMobile } from "../common/utils";
 
-const HEIGHT_AND_WIEIGHT_RATIOS = getHeightAndWidthRatiosForBarcodeStrips();
-const MULTIPLICATION_FACTOR = 10;
+const getCSSString = noOnStrip => {
+  const screenSize = isMobile() ? "small" : "large";
+  const { height, width } = getHeigtAndWeightForAStrip(noOnStrip, screenSize);
+  return `
+  height: ${height}px;
+  width: ${width}px;
+  `;
+};
 
 const BarcodeStrip = ({ type = "primary", num }) => {
   // If num is `falsy` but not 0
@@ -20,13 +27,14 @@ const BarcodeStrip = ({ type = "primary", num }) => {
             className={css`
               background-color: ${colors.secondaryColor};
               border: 1px solid ${colors.primaryColor};
-              height: ${HEIGHT_AND_WIEIGHT_RATIOS[num].height *
-                MULTIPLICATION_FACTOR}px;
-              width: ${HEIGHT_AND_WIEIGHT_RATIOS[num].width *
-                MULTIPLICATION_FACTOR}px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: ${colors.primaryColor};
+              ${getCSSString(num)}
             `}
           >
-            {/* {num} */}
+            {num}
           </div>
         )}
       </AppContext.Consumer>
@@ -38,14 +46,15 @@ const BarcodeStrip = ({ type = "primary", num }) => {
         <div
           className={css`
             background-color: ${colors.primaryColor};
-            height: ${HEIGHT_AND_WIEIGHT_RATIOS[num].height *
-              MULTIPLICATION_FACTOR}px;
-            width: ${HEIGHT_AND_WIEIGHT_RATIOS[num].width *
-              MULTIPLICATION_FACTOR}px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: ${colors.secondaryColor};
+            ${getCSSString(num)}
             margin-right: 2px;
           `}
         >
-          {/* {num} */}
+          {num}
         </div>
       )}
     </AppContext.Consumer>

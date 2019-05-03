@@ -56,4 +56,25 @@ export const getHeightAndWidthRatiosForBarcodeStrips = () => {
   ];
 };
 
+export const getMultiplicationFactor = size => {
+  if (size === "small") {
+    return [20, 40];
+  }
+  return [40, 80];
+};
+
+export const getHeigtAndWeightForAStrip = (noOnStrip, size) => {
+  const [
+    widthMultiplicationFactor,
+    heightMultiplicationFactor
+  ] = getMultiplicationFactor(size);
+  const { height, width } = getHeightAndWidthRatiosForBarcodeStrips()[
+    noOnStrip
+  ];
+  return {
+    height: height * heightMultiplicationFactor,
+    width: width * widthMultiplicationFactor
+  };
+};
+
 export default calculateChecksum;

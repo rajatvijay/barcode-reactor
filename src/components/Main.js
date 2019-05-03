@@ -54,7 +54,7 @@ class Main extends React.Component {
 
         <div
           className={css`
-            max-width: 800px;
+            max-width: 700px;
             margin: auto;
             min-height: 100vh;
             padding: 80px 10px 0 10px;

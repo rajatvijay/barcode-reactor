@@ -2,8 +2,6 @@
 
 <p align="center"><a href="https://barcode-reactor.rajatvijay.now.sh/" target="_blank" style="font-size: 28px;">Barcode Reactor</a></p>
 
-![screencast](https://media.giphy.com/media/ZArFLu6TIIPNZU8nkA/giphy.mp4)
-
 ### Features
 
 - generate barcode

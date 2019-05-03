@@ -13,7 +13,7 @@ const Header = () => {
         color: black;
         text-align: center;
         font-size: 18px;
-        padding: 10px;
+        padding: 15px;
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
       `}
     >

@@ -57,7 +57,7 @@ class Main extends React.Component {
             max-width: 800px;
             margin: auto;
             min-height: 100vh;
-            padding: 60px 10px 0 10px;
+            padding: 80px 10px 0 10px;
             text-align: center;
           `}
         >
@@ -69,6 +69,9 @@ class Main extends React.Component {
                 value={barcodeNumber}
                 maxLength={19}
                 type="number"
+                className={css`
+                  max-width: 400px;
+                `}
               />
               {/* <input
               placeholder="Primary Color"

@@ -1,8 +1,8 @@
-![notella](https://barcode-reactor.rajatvijay.now.sh)
+![barcode-reactor](https://github.com/rajatvijay/barcode-reactor/blob/master/art/banner.png?raw=true?raw=true)
 
 <p align="center"><a href="https://barcode-reactor.rajatvijay.now.sh/">barcode-reactor.rajatvijay.now.sh/</a></p>
 
-![screenshot](https://barcode-reactor.rajatvijay.now.sh)
+![screenshot](https://github.com/rajatvijay/barcode-reactor/blob/master/art/screen.png?raw=true?raw=true)
 
 ### Features
 

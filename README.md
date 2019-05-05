@@ -4,16 +4,19 @@
 
 ### Features
 
-- generate barcode
-- see change in strips in realtime
-- change colors in realtime
-- uses checksum
-- screen size responsive
-- deployments using now.sh
+- Generates barcode on the basis of the input number
+- See barcode generation in the realtime, no "Generate" button requried
+- Change primary and secondary colors in realtime
+- Remebers the color preference for subsequent vists
+- Shows checksum in the barcode
+- Scales fuildly for different screen sizes
 
 ### Dvelopment Guide
 
-- tests for checksum and strip size calculator modules interfaces
+- Contains tests for checksum and strip size calculator modules interfaces
+- Deployments for every commits using now.sh
+- Uses eslint and prettier for linting and formatting with pre-commit hook
+- CSS is written using emotion.sh
 
 ### Like it?
 

@@ -4,9 +4,47 @@ import {
 } from "../../barcodeCalculator";
 
 // Checksum calculation from the example
-it("Checksum is calculated correctly", () => {
+it("Checksum for question example aka [5, 4, 8, 9, 8, 5, 0, 3, 5, 4] is 7", () => {
   const checksum = calculateChecksum([5, 4, 8, 9, 8, 5, 0, 3, 5, 4]);
   expect(checksum).toBe(7);
+});
+
+// Checksum calculation with single digit
+it("Checksum for single digit aka [5] is 5", () => {
+  const checksum = calculateChecksum([5]);
+  expect(checksum).toBe(5);
+});
+
+// Checksum calculation with no digits
+it("Checksum for no digit aka [] is 0", () => {
+  const checksum = calculateChecksum([]);
+  expect(checksum).toBe(0);
+});
+
+// Checksum calculation with no digits
+it("Checksum for all 19 digits aka [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 9, 8, 7, 6, 5, 4, 3, 2, 4] is 1", () => {
+  const checksum = calculateChecksum([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    0,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    4
+  ]);
+  expect(checksum).toBe(1);
 });
 
 // Strip height and width for 1st strip and small size

@@ -11,6 +11,10 @@
 - screen size responsive
 - deployments using now.sh
 
+### Dvelopment Guide
+
+- tests for checksum and strip size calculator modules interfaces
+
 ### Like it?
 
 :star: this repo
